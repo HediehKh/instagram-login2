@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="leftColumn">
+        <div class="iphone">
+
+            <img class="bg-img" src="b.png" id="backgroundImage">
+
+            <div id="slide">
+                <img class="image1" src="ig4.png" />
+                <img class="image2"src="ig3.png" />
+                <img class="image3"src="ig1.png" />
+            </div>
+
+        </div>
+    </div>
+
+    <div class="rightColumn">
+        <div class="loginBox">
+            <div class="inputBox">
+                <div class="instagramLogo">
+                    <img src="head.png" alt="">
+                </div>
+                <div class="boxes">
+                    <input type="text" id="name" placeholder="Phone number, username, or email">
+                    <input type="password" id="password" placeholder="Password" maxlength="10"><br>
+                    <button class="button" type="submit">Log In</button>
+                    <h2 class="line">or</h2>
+                    <h2 class="login"><a href=""><img src="fblogo.png" alt="">Log in with Facebook</h2></a>
+                </div>
+                    <h3><a href="">Forgot password?</h3></a>
+            </div>        
+        </div>
+            <div class="signupBox">
+                <h2 class="signup">Don't have an account?<b><a href="" id="">&nbsp; Sign up</a></b></h2>
+            </div>
+        <div class="gettheapp">
+            <h2 class="getapptext">Get The App.</h2>
+            <div class="appButtons">
+                <div class="appstore"><img src="apps.png" alt=""></div>
+                <div class="googleplay"><img src="google.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+            <div class="footerLinks">
+                <a href="#">Meta</a>
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Jobs</a>
+                <a href="#">Help</a>
+                <a href="#">API</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Top Accounts</a>
+                <a href="#">Locations</a>
+                <a href="#">Intagram Life</a>
+                <a href="#">Contact Uploading & Non-Users</a>
+            </div>
+        <div class="secondFooterLine">
+            <div class="dropdown">
+            <h2 class="footerStyle">© 2023 Instagram from Meta</h2>
+        </div>
+    </div>
+    
+    
+<script>
+//get all the imgs in the "slide" div and change to an array of img objects
+var slide = document.getElementById("slide");
+var arr = Array.prototype.slice.call(slide.children);
+
+//initialize css
+arr.map(function(imgObj) {
+  imgObj.classList.add("slide-img");
+});
+
+//showing the first slide
+arr[0].classList.add("show");
+
+//initializing values
+var currentSlide = 1;
+var slideLength = slide.children.length;
+var prevSlide = 0;
+
+//interval function
+setInterval(function() {
+  if (currentSlide >= slideLength)
+    currentSlide = 0;
+
+  arr[prevSlide].classList.remove("show");
+  arr[currentSlide].classList.add("show");
+
+  prevSlide = currentSlide;
+  currentSlide++;
+
+}, 5000)
+        
+</script>
+</body>
+</html>
